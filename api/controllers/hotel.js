@@ -42,7 +42,7 @@ export const getHotel = async (req, res, next) => {
         res.status(200).json(hotel)
     }
     catch (err) {
-        res.status(500).json(err)
+        next(err)
     }
 }
 //GET ALL HOTELS
@@ -52,6 +52,6 @@ export const getAllHotels = async (req, res, next) => {
         res.status(200).json(hotels)
     }
     catch (err) {
-        res.status(500).json(err)
+        next(err)
     }
 }
